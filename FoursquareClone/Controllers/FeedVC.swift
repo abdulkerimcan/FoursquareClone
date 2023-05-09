@@ -23,7 +23,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     @objc func addButton() {
-        
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
     @objc func logout() {

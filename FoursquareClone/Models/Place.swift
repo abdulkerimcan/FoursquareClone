@@ -14,8 +14,8 @@ class Place {
     
     var name = ""
     var comment = ""
-    var longitude = ""
-    var latitude = ""
+    var longitude = Double()
+    var latitude = Double()
     var image = UIImage()
     
     private init() {}

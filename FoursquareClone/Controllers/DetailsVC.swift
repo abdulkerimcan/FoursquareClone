@@ -38,16 +38,12 @@ class DetailsVC: UIViewController,UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func nextClick(_ sender: Any) {
         if nameText.text != "" && commentText.text != "" {
+            let placeModel = Place.sharedInstance
+            placeModel.name = nameText.text!
+            placeModel.comment = commentText.text!
+            placeModel.image = imageView.image!
             performSegue(withIdentifier: "toMapVC", sender: nil)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMapVC" {
-            let destination = segue.destination as! MapVC
-            destination.place?.name = nameText.text
-            destination.place?.comment = commentText.text
-            destination.place?.image = imageView.image
+            
         }
     }
     

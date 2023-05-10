@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 
 class Place {
-    var name : String?
-    var comment : String?
-    var image : UIImage?
+    static let sharedInstance = Place()
     
-    init(name: String? = nil, comment: String? = nil, image: UIImage? = nil) {
-        self.name = name
-        self.comment = comment
-        self.image = image
-    }
+    
+    var name = ""
+    var comment = ""
+    var longitude = ""
+    var latitude = ""
+    var image = UIImage()
+    
+    private init() {}
 }
